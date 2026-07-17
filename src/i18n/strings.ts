@@ -82,6 +82,32 @@ export const strings = {
       footer: "TirtaJaga — Garuda Hacks 2026 · Track 2: Safety",
     },
 
+    sim: {
+      deck: "DECK",
+      swimmersPanel: "Perenang",
+      addSwimmer: "+ Tambah",
+      controls: "Kontrol Demo",
+      reset: "Reset Simulasi",
+      instrDrag:
+        "Seret karakter ke zona kolam atau ke deck — posisi ini yang muncul di Map.",
+      instrClick:
+        "Klik karakter yang sedang berenang untuk memicu skenario tenggelam.",
+      instrConfirm:
+        "Alarm hanya berbunyi setelah konfirmasi diam ±6 detik — bukan “masuk air = alarm”.",
+      battery: "Baterai",
+      deckLabel: "Deck",
+      alarmActive: "ALARM",
+      rescue: "Selamatkan",
+      submersion: "Submersi",
+      status: {
+        idle: "Di deck",
+        swimming: "Berenang",
+        struggling: "Meronta!",
+        drowning: "Terdeteksi diam",
+        rescued: "Diselamatkan",
+      },
+    },
+
     page: {
       home: {
         title: "Beranda",
@@ -189,6 +215,32 @@ export const strings = {
         button: "Open Simulation",
       },
       footer: "TirtaJaga — Garuda Hacks 2026 · Track 2: Safety",
+    },
+
+    sim: {
+      deck: "DECK",
+      swimmersPanel: "Swimmers",
+      addSwimmer: "+ Add",
+      controls: "Demo Controls",
+      reset: "Reset Simulation",
+      instrDrag:
+        "Drag a character into a pool zone or onto the deck — this position is what shows up on the Map.",
+      instrClick:
+        "Click a swimming character to trigger the drowning scenario.",
+      instrConfirm:
+        "The alarm only fires after ±6 seconds of motionless confirmation — not “in the water = alarm”.",
+      battery: "Battery",
+      deckLabel: "Deck",
+      alarmActive: "ALARM",
+      rescue: "Rescue",
+      submersion: "Submersion",
+      status: {
+        idle: "On deck",
+        swimming: "Swimming",
+        struggling: "Struggling!",
+        drowning: "Motionless detected",
+        rescued: "Rescued",
+      },
     },
 
     page: {

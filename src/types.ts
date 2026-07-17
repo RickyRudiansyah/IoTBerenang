@@ -15,6 +15,8 @@ export interface Swimmer {
   status: SwimmerStatus;
   submersionSec: number;
   battery: number;
+  /** posisi di arena simulasi, persen (0–100) — dipakai Simulasi & Map */
+  pos?: { x: number; y: number };
 }
 
 export interface Zone {

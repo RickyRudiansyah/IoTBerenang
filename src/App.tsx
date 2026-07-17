@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { PageId } from "./types";
 import { LangProvider } from "./i18n/LangContext";
+import { SoundProvider } from "./audio/SoundContext";
 import { AppStateProvider } from "./store/AppState";
 import { Topbar } from "./components/shell/Topbar";
 import { NavTabs } from "./components/shell/NavTabs";
@@ -14,7 +15,8 @@ export default function App() {
 
   return (
     <LangProvider>
-      <AppStateProvider>
+      <SoundProvider>
+        <AppStateProvider>
         <div className="flex min-h-screen flex-col">
           <Topbar />
           <NavTabs page={page} onNavigate={setPage} />
@@ -25,7 +27,8 @@ export default function App() {
             {page === "report" && <ReportPage />}
           </main>
         </div>
-      </AppStateProvider>
+        </AppStateProvider>
+      </SoundProvider>
     </LangProvider>
   );
 }

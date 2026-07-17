@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLang } from "../../i18n/LangContext";
+import { useSound } from "../../audio/SoundContext";
 import { IconButton, Toggle, IconVolume, IconVolumeMuted } from "../ui";
 
 function Clock() {
@@ -24,7 +25,7 @@ function Clock() {
 
 export function Topbar() {
   const { lang, setLang, t } = useLang();
-  const [muted, setMuted] = useState(false);
+  const { muted, toggleMuted } = useSound();
 
   return (
     <header className="flex h-14 items-center justify-between border-b border-line bg-panel/80 px-5 backdrop-blur-sm">
@@ -60,7 +61,7 @@ export function Topbar() {
         <IconButton
           aria-label={muted ? t.unmute : t.mute}
           active={muted}
-          onClick={() => setMuted((m) => !m)}
+          onClick={toggleMuted}
         >
           {muted ? <IconVolumeMuted /> : <IconVolume />}
         </IconButton>
