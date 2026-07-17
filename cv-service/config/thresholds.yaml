@@ -1,0 +1,25 @@
+model:
+  input_size: 640
+  confidence_threshold: 0.35
+  device: auto
+
+tracking:
+  track_lost_timeout_ms: 1200
+
+history:
+  window_ms: 5000
+
+motion:
+  low_motion_ratio_per_sec: 0.02
+  inactivity_ms: 3000
+
+state:
+  watch_min_ms: 300
+  distress_persistence_ms: 1800
+  inactivity_persistence_ms: 3000
+  recovery_ms: 1500
+
+events:
+  heartbeat_ms: 3000
+  mock_event_ms: 1000
+  emit_on_state_change: true

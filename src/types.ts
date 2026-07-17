@@ -34,5 +34,37 @@ export interface Alarm {
   resolved: boolean;
 }
 
+export type VisualRawClass =
+  | "normal_swimming"
+  | "distress_candidate"
+  | "out_of_water";
+
+export type VisualMotionState = "normal" | "low" | "unknown";
+export type VisualVisibility = "clear" | "limited" | "lost" | "unavailable";
+
+export type VisualState =
+  | "normal"
+  | "watch"
+  | "suspected_distress"
+  | "suspected_inactivity"
+  | "visibility_limited"
+  | "track_lost"
+  | "camera_unavailable";
+
+export interface VisualEvidenceEvent {
+  timestamp: string;
+  cameraId: string;
+  trackId: number;
+  zoneId: ZoneId;
+  rawClass: VisualRawClass;
+  detectionConfidence: number;
+  motionState: VisualMotionState;
+  lowMotionDurationMs: number;
+  classPersistenceMs: number;
+  visibility: VisualVisibility;
+  visualState: VisualState;
+  evidence: string[];
+}
+
 export type PageId = "home" | "map" | "simulation" | "report";
 export type Lang = "id" | "en";

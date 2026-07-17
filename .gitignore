@@ -19,3 +19,15 @@ Thumbs.db
 
 # project context (not committed)
 CLAUDE.md
+
+# cv service local/runtime artifacts
+cv-service/.venv/
+cv-service/__pycache__/
+cv-service/**/__pycache__/
+cv-service/.pytest_cache/
+cv-service/.coverage
+cv-service/data/raw/
+cv-service/data/processed/
+cv-service/runs/
+cv-service/models/*.pt
+cv-service/models/*.onnx
