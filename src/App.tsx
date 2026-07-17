@@ -9,16 +9,8 @@ import { MapPage } from "./pages/MapPage";
 import { SimulationPage } from "./pages/SimulationPage";
 import { ReportPage } from "./pages/ReportPage";
 
-const pages: Record<PageId, () => React.JSX.Element> = {
-  home: HomePage,
-  map: MapPage,
-  simulation: SimulationPage,
-  report: ReportPage,
-};
-
 export default function App() {
   const [page, setPage] = useState<PageId>("home");
-  const Page = pages[page];
 
   return (
     <LangProvider>
@@ -27,7 +19,10 @@ export default function App() {
           <Topbar />
           <NavTabs page={page} onNavigate={setPage} />
           <main className="flex-1">
-            <Page />
+            {page === "home" && <HomePage onNavigate={setPage} />}
+            {page === "map" && <MapPage />}
+            {page === "simulation" && <SimulationPage />}
+            {page === "report" && <ReportPage />}
           </main>
         </div>
       </AppStateProvider>

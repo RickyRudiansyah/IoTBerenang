@@ -28,21 +28,36 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
+  /* air kolam (dipakai Simulasi & Map juga) */
+  --color-water: #0e2038;
+
   /* radius kecil — rasa ops/console */
   --radius-panel: 6px;
 
   --animate-pulse-dot: pulse-dot 1.6s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes pulse-dot {
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 --alpha(var(--color-safe) / 50%);
+    box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 45%, transparent);
   }
   50% {
-    opacity: 0.6;
-    box-shadow: 0 0 0 4px --alpha(var(--color-safe) / 0%);
+    opacity: 0.65;
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
