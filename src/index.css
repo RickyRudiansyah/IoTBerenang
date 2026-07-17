@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TirtaJaga — Design Tokens (single source of truth)
+   Dipakai lewat utility Tailwind: bg-bg, bg-panel, border-line,
+   text-ink, text-ink-dim, bg-accent, text-safe/warn/danger, dst.
+   ============================================================ */
+@theme {
+  /* surfaces */
+  --color-bg: #0a1626;
+  --color-panel: #122138;
+  --color-line: #1e3350;
+
+  /* accent */
+  --color-accent: #2d6cdf;
+  --color-accent-soft: #2d6cdf26;
+
+  /* status */
+  --color-safe: #22c55e;
+  --color-warn: #f5a623;
+  --color-danger: #ef4444;
+
+  /* text */
+  --color-ink: #e6edf5;
+  --color-ink-dim: #8ca0b8;
+
+  /* typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* radius kecil — rasa ops/console */
+  --radius-panel: 6px;
+
+  --animate-pulse-dot: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 --alpha(var(--color-safe) / 50%);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 4px --alpha(var(--color-safe) / 0%);
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-bg);
+    /* tekstur control-room: grid garis tipis samar */
+    background-image:
+      linear-gradient(--alpha(var(--color-line) / 22%) 1px, transparent 1px),
+      linear-gradient(90deg, --alpha(var(--color-line) / 22%) 1px, transparent 1px);
+    background-size: 32px 32px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-ink);
+  }
+}
+
+@utility num {
+  /* angka data live: mono + tabular */
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

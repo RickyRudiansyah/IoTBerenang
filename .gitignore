@@ -1,0 +1,21 @@
+# deps & build
+node_modules/
+dist/
+*.local
+*.tsbuildinfo
+
+# claude local settings
+.claude/settings.local.json
+
+# logs
+npm-debug.log*
+*.log
+
+# editor/os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# project context (not committed)
+CLAUDE.md
